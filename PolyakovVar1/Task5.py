@@ -1,13 +1,15 @@
-for i in range(0, 1000):
-    result = str(bin(i))[2:]
-    if i % 2 == 0:
-        result = '1' + result
+def f(N):
+    binN = bin(N)[2:]
+    if N % 2 != 0:
+        binN += '0'
     else:
-        result = result + '0'
-    if result.count('1') % 2 == 0:
-        result += '1'
+        binN = '1' + binN
+    if binN.count('1') % 2 == 0:
+        binN += '1'
     else:
-        result += '0'
-    if int(result, 2) > 228:
-        print(i)
+        binN += '0'
+    return(binN)
+for N in range(0, 100):
+    if int(f(N), 2) > 228:
+        print(N)
         break

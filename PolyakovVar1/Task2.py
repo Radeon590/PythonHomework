@@ -1,5 +1,5 @@
 def f(a, b, c, d):
-    return ((a and b) == (not(c))) and (b <= d)
+    return (not((a and b) == c)) and (b <= d)
 
 print('a b c d')
 
